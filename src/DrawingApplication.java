@@ -4,7 +4,10 @@ import javax.swing.*;
 import javax.swing.border.*;
 import javax.swing.event.*;
 //import java.io.*;
+import java.io.*;
 import java.util.Arrays;
+
+import static javax.swing.JOptionPane.*;
 
 
 public class DrawingApplication extends JFrame
@@ -53,6 +56,8 @@ public class DrawingApplication extends JFrame
     private JTextArea messageArea;
     
     private JMenuBar menuBar;
+
+    private JOptionPane optionPane;
     
     private int freehandThickness = 50;
 
@@ -102,12 +107,17 @@ public class DrawingApplication extends JFrame
             fileMenu.addSeparator();
             JMenuItem fileExitMenuItem = new JMenuItem("Exit");
             fileMenu.add(fileExitMenuItem);
+            fileLoadMenuItem.addActionListener(new LoadMenuActionListener());
+            fileSaveMenuItem.addActionListener(new SaveMenuActionListener());
+            fileExitMenuItem.addActionListener(new ExitMenuActionListener());
           menuBar.add(fileMenu);
           JMenu helpMenu = new JMenu("Help");
             JMenuItem helpAboutMenuItem = new JMenuItem("About");
             helpMenu.add(helpAboutMenuItem);
+            helpAboutMenuItem.addActionListener(new AboutMenuActionListener());
           menuBar.add(helpMenu);
         add(menuBar, BorderLayout.PAGE_START);
+
         
         // Control Panel
         controlPanel = new JPanel();
@@ -275,7 +285,7 @@ public class DrawingApplication extends JFrame
         // Shape Drawing
         for (int i = 0; i < freehandPixelsCount; i++) {
             g.setColor(freehandColour[i]);
-            g.fillRect(fxy[i][0], fxy[i][1], fxy[i][2], fxy[i][2]);
+            g.fillOval(fxy[i][0], fxy[i][1], fxy[i][2], fxy[i][2]);
         }
         for (int i = 0; i < rectangleCount; i++){
             int width = rxy[i][2] - rxy[i][0];
@@ -325,7 +335,6 @@ public class DrawingApplication extends JFrame
             messageArea.append("You are out of ink \n");
         }
     }
-
     
     public static void main(String args[])
     {
@@ -473,6 +482,78 @@ public class DrawingApplication extends JFrame
             Arrays.fill(lineColour, null);
             canvas.repaint();
             messageArea.setText("");
+        }
+    }
+
+    class LoadMenuActionListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent event){
+            try{
+                FileInputStream fis = new FileInputStream("drawing");
+                ObjectInputStream fh = new ObjectInputStream(fis);
+                lxy = (int[][])fh.readObject();
+                lineColour = (Color[])fh.readObject();
+                lineCount = (int)fh.readInt();
+                rxy = (int[][])fh.readObject();
+                rectColour = (Color[])fh.readObject();
+                rectangleCount = (int)fh.readInt();
+                oxy = (int[][])fh.readObject();
+                ovalColour = (Color[])fh.readObject();
+                ovalCount = (int)fh.readInt();
+                fxy = (int[][])fh.readObject();
+                freehandColour = (Color[])fh.readObject();
+                freehandPixelsCount = fh.readInt();
+                fh.close();
+            }
+            catch(IOException e){
+                messageArea.append("Oops, something went wrong in loading");
+                e.printStackTrace();
+            }
+            catch(ClassNotFoundException f){
+                messageArea.append("Oops, something went wrong in loading");
+            }
+        }
+    }
+
+
+    class SaveMenuActionListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent event){
+            try{
+                FileOutputStream fos = new FileOutputStream("drawing");
+                ObjectOutputStream fh = new ObjectOutputStream(fos);
+                fh.writeObject(lxy);
+                fh.writeObject(lineColour);
+                fh.writeInt(lineCount);
+                fh.writeObject(rxy);
+                fh.writeObject(rectColour);
+                fh.writeInt(rectangleCount);
+                fh.writeObject(oxy);
+                fh.writeObject(ovalColour);
+                fh.writeInt(ovalCount);
+                fh.writeObject(fxy);
+                fh.writeObject(freehandColour);
+                fh.writeInt(freehandPixelsCount);
+                fh.close();
+
+            }
+            catch (IOException e){
+                messageArea.append("Oops, something went wrong in saving");
+            }
+        }
+    }
+
+    class ExitMenuActionListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent event){
+            System.exit(0);
+        }
+    }
+
+    class AboutMenuActionListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent event){
+            JOptionPane.showMessageDialog(null, "Drawing Application \n By Richard Jones", "About", JOptionPane.PLAIN_MESSAGE);
         }
     }
 } // end of DrawingApplication class
