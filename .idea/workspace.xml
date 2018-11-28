@@ -3,12 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="df0181db-676e-47fe-9815-c632fc835f4c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drawing" beforeDir="false" afterPath="$PROJECT_DIR$/drawing" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DrawingApplication/DrawingApplication$AboutMenuActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DrawingApplication/DrawingApplication$AboutMenuActionListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DrawingApplication/DrawingApplication$Canvas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DrawingApplication/DrawingApplication$Canvas.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DrawingApplication/DrawingApplication$CanvasMouseListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DrawingApplication/DrawingApplication$CanvasMouseListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DrawingApplication/DrawingApplication$CanvasMouseMotionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DrawingApplication/DrawingApplication$CanvasMouseMotionListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DrawingApplication/DrawingApplication$CheckBoxActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DrawingApplication/DrawingApplication$CheckBoxActionListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DrawingApplication/DrawingApplication$ClearButtonActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DrawingApplication/DrawingApplication$ClearButtonActionListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DrawingApplication/DrawingApplication$ColorButtonActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DrawingApplication/DrawingApplication$ColorButtonActionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DrawingApplication/DrawingApplication$ExitMenuActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DrawingApplication/DrawingApplication$ExitMenuActionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DrawingApplication/DrawingApplication$LoadMenuActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DrawingApplication/DrawingApplication$LoadMenuActionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DrawingApplication/DrawingApplication$SaveMenuActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DrawingApplication/DrawingApplication$SaveMenuActionListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DrawingApplication/DrawingApplication$SliderChangeListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DrawingApplication/DrawingApplication$SliderChangeListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DrawingApplication/DrawingApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DrawingApplication/DrawingApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DrawingApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DrawingApplication.java" afterDir="false" />
@@ -24,25 +29,27 @@
     <session id="-863106509">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="15" />
-          <entry key="project.open.time.10" value="4" />
-          <entry key="project.open.time.11" value="3" />
-          <entry key="project.open.time.12" value="1" />
+          <entry key="project.closed" value="22" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.10" value="6" />
+          <entry key="project.open.time.11" value="4" />
+          <entry key="project.open.time.12" value="2" />
+          <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="3" />
-          <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.15" value="2" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.open.time.9" value="5" />
-          <entry key="project.opened" value="18" />
+          <entry key="project.open.time.9" value="6" />
+          <entry key="project.opened" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="8301" />
+          <entry key="java" value="9390" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="8301" />
+          <entry key="JAVA" value="9390" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -64,16 +71,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DrawingApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="505" column="27" lean-forward="true" selection-start-line="505" selection-start-column="27" selection-end-line="505" selection-end-column="27" />
+            <state relative-caret-position="991">
+              <caret line="258" column="14" selection-start-line="258" selection-start-column="14" selection-end-line="258" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#13791#16425#0" />
-                <element signature="e#16435#17322#0" />
-                <element signature="e#17337#17577#0" />
-                <element signature="e#17584#17775#0" />
-                <element signature="e#17853#18072#0" />
-                <element signature="e#18085#19116#0" />
               </folding>
             </state>
           </provider>
@@ -89,6 +90,7 @@
       <find>jFrame</find>
       <find>freehandPixelsCount = (int)fh.readInt();</find>
       <find>freehandPixelsCount</find>
+      <find>animator</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -109,9 +111,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="width" value="977" />
-    <option name="height" value="1038" />
+    <option name="x" value="-10" />
+    <option name="width" value="980" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -161,32 +163,13 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="DrawingApplication" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DrawingApplication" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DrawingApplication" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DrawingApplication" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541099167975" />
-    <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542913857450" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -287,25 +270,34 @@
       <workItem from="1541090561663" duration="2320000" />
       <workItem from="1541093662347" duration="471000" />
       <workItem from="1541095674517" duration="3476000" />
+      <workItem from="1541111798507" duration="160000" />
+      <workItem from="1541426849497" duration="3537000" />
+      <workItem from="1541451327392" duration="911000" />
+      <workItem from="1541769344250" duration="45000" />
+      <workItem from="1542032484345" duration="268000" />
+      <workItem from="1542911453316" duration="1491000" />
+      <workItem from="1543094245297" duration="28000" />
+      <workItem from="1543401197892" duration="615000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44321000" />
+    <option name="totallyTimeSpent" value="51376000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13825503" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.14228188" />
       <window_info id="Image Layers" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info id="Structure" order="6" weight="0.2590604" />
+      <window_info id="Structure" order="6" visible="true" weight="0.2803838" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.25212464" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.25135428" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -404,16 +396,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DrawingApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="505" column="27" lean-forward="true" selection-start-line="505" selection-start-column="27" selection-end-line="505" selection-end-column="27" />
+        <state relative-caret-position="991">
+          <caret line="258" column="14" selection-start-line="258" selection-start-column="14" selection-end-line="258" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#13791#16425#0" />
-            <element signature="e#16435#17322#0" />
-            <element signature="e#17337#17577#0" />
-            <element signature="e#17584#17775#0" />
-            <element signature="e#17853#18072#0" />
-            <element signature="e#18085#19116#0" />
           </folding>
         </state>
       </provider>

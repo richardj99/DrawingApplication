@@ -67,6 +67,14 @@ public class DrawingApplication extends JFrame
     private int shapeRubberBand = 0;  // 0 - Inactive; 1 - Rubber Band; 2 - Draw Rectangle
 
 
+    private AnimatorClass animator = new AnimatorClass();
+    private Timer animationTimer = new Timer(200, animator);
+    private boolean startTimer = false;
+
+    private boolean xPosOval = true;
+    private boolean yPosOval = true;
+
+
         // Drawing area class (inner class).
     class Canvas extends JPanel {
 
@@ -230,6 +238,7 @@ public class DrawingApplication extends JFrame
         animateButton = new JButton("Animate");
           animateButton.setPreferredSize(new Dimension(CONTROL_PANEL_WIDTH - 20, 50));
         controlPanel.add(animateButton);
+        animateButton.addActionListener(new AnimateButtonListener());
         
         // that completes the control panel section
 
@@ -254,7 +263,8 @@ public class DrawingApplication extends JFrame
         freehandSizeSlider.addChangeListener(new SliderChangeListener());
         colourButton.addActionListener(new ColorButtonActionListener());
         clearButton.addActionListener(new ClearButtonActionListener());
-        
+
+
     }  // end of the DrawingApplication constructor method
     
     // Called by the canvas' paintComponent method
@@ -349,6 +359,7 @@ public class DrawingApplication extends JFrame
         }
         
         public void mouseReleased(MouseEvent event){
+            animationTimer.stop();
             shapeRubberBand = 2;
             if(rectangleRadioButton.isSelected()){
                 if(rectangleCount<10) {
@@ -388,6 +399,9 @@ public class DrawingApplication extends JFrame
                     canvas.repaint();
                 }
                 else messageArea.append("Maximum number of lines reached \n");
+            }
+            if(startTimer) {
+                animationTimer.start();
             }
         }
         
@@ -455,6 +469,7 @@ public class DrawingApplication extends JFrame
     class ClearButtonActionListener implements ActionListener
     {
         public void actionPerformed(ActionEvent event){
+            animationTimer.stop();
             for(int i=0; i>freehandPixelsCount; i++){
                 fxy[i][0] = 0;
                 fxy[i][1] = 0;
@@ -493,13 +508,13 @@ public class DrawingApplication extends JFrame
                 ObjectInputStream fh = new ObjectInputStream(fis);
                 lxy = (int[][])fh.readObject();
                 lineColour = (Color[])fh.readObject();
-                lineCount = (int)fh.readInt();
+                lineCount = fh.readInt();
                 rxy = (int[][])fh.readObject();
                 rectColour = (Color[])fh.readObject();
                 rectangleCount = (int)fh.readInt();
                 oxy = (int[][])fh.readObject();
                 ovalColour = (Color[])fh.readObject();
-                ovalCount = (int)fh.readInt();
+                ovalCount = fh.readInt();
                 fxy = (int[][])fh.readObject();
                 freehandColour = (Color[])fh.readObject();
                 freehandPixelsCount = fh.readInt();
@@ -556,4 +571,25 @@ public class DrawingApplication extends JFrame
             JOptionPane.showMessageDialog(null, "Drawing Application \n By Richard Jones", "About", JOptionPane.PLAIN_MESSAGE);
         }
     }
+
+    class AnimateButtonListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent event){
+            startTimer = true;
+            animationTimer.start();
+        }
+    }
+
+    class AnimatorClass implements ActionListener
+    {
+        public void actionPerformed(ActionEvent event){
+            if(ovalCount > 0) {
+                oxy[0][0] = oxy[0][0] + 10;
+                oxy[0][2] = oxy[0][2] + 10;
+                oxy[0][1] = oxy[0][1] + 10;
+                oxy[0][3] = oxy[0][3] + 10;
+            }
+        }
+    }
+
 } // end of DrawingApplication class
